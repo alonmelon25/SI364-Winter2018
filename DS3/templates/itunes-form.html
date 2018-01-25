@@ -1,0 +1,27 @@
+<!-- <html>
+<title>
+</title>
+<body>
+<form method = "" action="http://localhost:5000/itunes-result">
+<h3>Enter artist name : <input name="artist" value=""></h3>
+<h3>How many results should the iTunes API return? <input name="count" value=""></h3>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html> -->
+
+<html>
+<title>
+</title>
+<body>
+<form method = "POST" action="http://localhost:5000/itunes-result">
+  {{ form.hidden_tag() }}
+  {% for message in get_flashed_messages() %}
+  {{ message }}
+  {% endfor %}
+<h3>Enter artist name : {{ form.artist() }}</h3>
+<h3>How many results should the iTunes API return? {{ form.results() }}</h3>
+{{ form.submit() }}
+</form>
+</body>
+</html>
