@@ -1,0 +1,11 @@
+<html>
+<title>
+</title>
+<body>
+<form method = "GET" action="http://localhost:5000/album_result">
+<h3>Enter the name of an album: {{ form.album_name() }}</h3>
+<h3>How much do you like this album? (1 low, 3 high) {{ form.album_rating() }}</h3>
+{{ form.submit() }}
+</form>
+</body>
+</html>
