@@ -184,7 +184,6 @@ def index():
         db.session.commit()
         flash("Tweet successfully added!")
         return redirect(url_for('index'))
-
     # PROVIDED: If the form did NOT validate / was not submitted
     errors = [v for v in form.errors.values()]
     if len(errors) > 0:
@@ -237,9 +236,6 @@ def longest_tweet():
 
     for tweet in all_tweets:
         word_count = len(tweet.text.split())
-        # for i in tweet.text:
-        #     if i != " ":
-        #         word_count += 1
         text_dic[tweet.text] = word_count
     sorted_lst = sorted(text_dic.items(), key = lambda x: x[1], reverse = True) # Sort by longest to shortest so reverse = True
     sorted_tweet = sorted_lst[0][0]
