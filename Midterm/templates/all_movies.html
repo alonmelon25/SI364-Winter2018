@@ -1,0 +1,21 @@
+
+
+{% block content %}
+<h1>All movies searched</h1>
+<ul>
+{% for m in movies %}
+  <li>Movie Title: {{ m.title }}</li>
+  <li>Year Released: {{ m.year }}</li>
+  <li>Rated: {{ m.rated }}</li>
+  <li>Released Date: {{ m.released }}</li>
+  <li>Total Duration: {{ m.runtime }}</li>
+  <li>Genre: {{ m.genre }}</li>
+  <li>Director: {{ m.director }}</li><br><br>
+{% endfor %}
+</ul>
+
+{% if not movies %}
+    There are no movie entries to show.
+{% endif %}
+
+{% endblock %}

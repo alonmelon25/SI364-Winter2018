@@ -1,0 +1,12 @@
+
+
+{% block content %}
+
+<form action="{{ url_for('mood') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label() }}{{ form.title() }}<br>
+    {{ form.mood_selection.label() }}{{ form.mood_selection() }}<br>
+    {{ form.submit() }}
+</form>
+
+{% endblock %}

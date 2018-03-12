@@ -1,0 +1,15 @@
+
+
+{% block content %}
+<h1>All movies entered</h1>
+<ul>
+{% for m in all_moods %}
+  <li>{{ m[0] }} -- <i>{{ m[1] }}</i></li><br>
+{% endfor %}
+</ul>
+
+{% if not all_moods %}
+    There are no entries to show.
+{% endif %}
+
+{% endblock %}

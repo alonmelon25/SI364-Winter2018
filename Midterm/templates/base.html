@@ -1,0 +1,20 @@
+<h1>Navigation</h1>
+
+<ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('movie') }}">Movie search</a></li>
+    <li><a href="{{ url_for('mood_entry') }}">Movie by mood</a></li>
+    <li><a href="{{ url_for('all_movies') }}">All movies</a></li>
+    <li><a href="{{ url_for('all_moods') }}">All movies by mood</a></li>
+</ul>
+
+{% block content1 %}
+
+<form action="{{ url_for('all_names') }}" method="GET">
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+{% endblock %}
